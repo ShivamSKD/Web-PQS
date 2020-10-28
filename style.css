@@ -1,0 +1,240 @@
+/*
+ * Anna Dorottya Simon, Márk Szabó
+ * Neptun-ID: R48G73, EMX74N
+ * Applied cryptography project - a postquantum messenger application
+ * January 2017
+ * This solution was submitted and prepared by Anna Dorottya Simon(R48G73), Márk Szabó(EMX74N) for the project assignment of the Applied cryptography project seminar course.
+ * We declare that this solution is our own work.
+ * We have put the necessary references wherever we have used bigger and/or complicated external codes in our project. For shorter code snippets (usually from Stack Overflow) we have put the reference there in most cases.
+ * Given the uniqueness of the project (no other student had, have or will have the same project) we have published our code on GitHub with the permission of our professors.
+ * Students’ regulation of Eötvös Loránd University (ELTE Regulations Vol. II. 74/C. § ) states that as long as a student presents another student’s work - or at least the significant part of it - as his/her own performance, it will count as a disciplinary fault. The most serious consequence of a disciplinary fault can be dismissal of the student from the University.
+ */
+
+html {
+  height: 100%;
+}
+
+body {
+  font: 18px "Ubuntu", sans-serif;
+  line-height: 1.8;
+  background: #FAFFFD;
+  color: #342E37;
+  height: 100%;
+}
+
+/* BEGIN signin form*/
+#signin {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+  height: calc(100% - 32px);
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.progress {
+  margin-top:10px;
+  display:none;
+}
+
+/*END signin form */
+
+
+#main {
+  display:none;
+  width: 95%;
+  height: calc(100% - 32px);
+}
+
+@media (min-width: 768px) {
+  #messageouterouter {
+    height: 99%;
+  }
+}
+
+@media (max-width: 767px) {
+  #messageouterouter {
+    margin-top:50px;
+    height: calc(100% - 170px);
+  }
+  .navbar-absolute {
+    position: absolute;
+    margin: 0;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    padding-left: 15px;
+    bottom: 0px;
+    z-index:100;
+  }
+  #menu {
+    margin-top:0px;
+    background:#FFF;
+  }
+}
+
+.height100 {
+  height: 100%;
+}
+
+.width100 {
+  width: 100%;
+}
+
+#messagesouter {
+  display:none;
+}
+
+p {
+  font-size: 16px;
+  text-align: justify;
+}
+
+@media (min-width: 768px) {
+  #messagetitle {
+    padding:15px;
+    /*prevent multiline, add ... http://stackoverflow.com/a/12913510*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #menubrand {
+    display:none;
+  }
+}
+
+@media  (max-width: 767px) {
+  #messagetitle {
+    display:none;
+  }
+  #menubrand {
+    padding-left:45px;
+    width: calc(100% - 65px);
+    /*prevent multiline, add ... http://stackoverflow.com/a/12913510*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+.sidebar {
+  background: #3C91E6;
+  color: #FAFFFD;
+}
+
+li {
+  width: 100%;
+  /*prevent multiline, add ... http://stackoverflow.com/a/12913510*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.msgFromMe {
+  margin-left: 10% !important;
+  background-color: #9FD356;
+}
+
+.msgToMe {
+  margin-right: 10% !important;
+  background-color: #c0c6bc;
+}
+
+.msgFromMe, .msgToMe {
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+footer {background-color: #FA824C !important;}
+/*footer a {color: #46876D;}
+footer a:hover {color: #286B50;}
+3C91E6*/
+
+/*
+ *  Copyright (c) 2015 The WebRTC project authors. All Rights Reserved.
+ *
+ *  Use of this source code is governed by a BSD-style license
+ *  that can be found in the LICENSE file in the root of the source
+ *  tree.
+ */
+button {
+  margin: 0 20px 0 0;
+  width: 83px;
+}
+
+button#hangupButton {
+    margin: 0;
+}
+
+video {
+  --width: 45%;
+  width: var(--width);
+  height: calc(var(--width) * 0.75);
+  margin: 0 0 20px 0;
+  vertical-align: top;
+}
+
+video#localVideo {
+  margin: 0 20px 20px 0;
+}
+
+div.box {
+  margin: 1em;
+}
+
+@media screen and (max-width: 400px) {
+  button {
+    width: 83px;
+    margin: 0 11px 10px 0;
+  }
+
+  video {
+    height: 90px;
+    margin: 0 0 0 0;
+    width: calc(50% - 7px);
+  }
+  video#localVideo {
+    margin: 0 0 0 0;
+  }
+
+}
