@@ -14,7 +14,7 @@ The messaging protocol and the implementation was developed during a university 
 
 This is a fully web-based messenger application written in JavaScript (Jquery) and php. For the interface we have used Bootstrap and on the backend the data is stored in a MySQL database.
 
-![Chat](https://github.com/markszabo/postq/raw/master/img/chat.png "Chat")
+![image](https://user-images.githubusercontent.com/34786046/97524630-27b28b00-19cb-11eb-972f-86becaad8947.png)
 
 ## Future development
 
