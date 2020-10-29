@@ -1,4 +1,4 @@
-# Web-PQS
+# Web-PQS(Team no -17 ,Btech MNNIT Allahabad)
 
 This repository contains the code of PostQ: a web-based messenger application with end-to-end post-quantum encryption. This was created as a homework for the Applied Cryptography Project Seminar class at [ELTE](http://elte.hu/), Hungary by [Anna Dorottya Simon](https://github.com/annadorottya) and [Márk Szabó](https://github.com/markszabo/).
 
