@@ -26,18 +26,8 @@ The following features could be implemented in the future:
 * Add end2end tests
 * Setup some CI (e.g. [Travis](https://travis-ci.org/)) to run the tests on every PR 
 
-Feel free to take any of them (or any other feature/bug fix) and send a PR.
 
-## Installation
 
-A webserver with php and an SQL server is needed to run PostQ.
-
-1. Download the code from [here](https://github.com/markszabo/PostQ/archive/master.zip) (or clone the git repository).
-2. Fill in `sqlconfig.php_example` with the database properties.
-3. Rename `sqlconfig.php_example` to `sqlconfig.php`.
-4. Open `/install.php` in browser. This will create the necessary database tables.
-5. Open `index.html` and use the application.
-6. E-mail verification can be enabled editing file `mail_config.php`. Remeber to configure PHP mail() function to be able to send e-mails from your server.
 
 ## Attack model
 
@@ -89,17 +79,6 @@ As stated above, using quantum computers, the key length of symmetric crypograph
 
 RSA is not a post-quantum algorithm, so we had to find an other algorithm. Our first suggestion was the classic [NTRU](https://en.wikipedia.org/wiki/NTRU), which is a lattice-based public key cryptographic algorithm, developed in 1996, relying on the [Closest Vector Problem](https://en.wikipedia.org/wiki/Lattice_problem#Closest_vector_problem_.28CVP.29). However since NTRU uses rings which are not fields, there are some potential attacks against it. In May 2016, Daniel Bernstein, Tanja Lange et al released [NTRU Prime](https://ntruprime.cr.yp.to/ntruprime-20160511.pdf), which uses fields, eliminating these attacks. We decided to implement this latter version of NTRU.
 
-## Contributors
-
-In chronological order of their contributions:
-
-* The original protocol and code was developed by [Anna Dorottya Simon](https://github.com/annadorottya) and [Márk Szabó](https://github.com/markszabo/)
-* [f-viktor](https://github.com/f-viktor) added the VideoChat feature ([PR #2](https://github.com/markszabo/PostQ/pull/2))
-* [deleterium](https://github.com/deleterium) did various improvements (moving from GET to POST calls, saving the session to localstorage, having email verification at registration)
-
-Thank you for all contributors for their time and efforts. 
-
-Feel free to contribute and include yourself here when you send a PR.
 
 ## External libraries
 
