@@ -10,7 +10,7 @@ The messaging protocol and the implementation was developed during a university 
 
 ## Quick peak
 
-![Login](https://github.com/markszabo/postq/raw/master/img/login.png "Login")
+![image](https://user-images.githubusercontent.com/34786046/97524491-d0141f80-19ca-11eb-8a06-55152d2b874e.png)
 
 This is a fully web-based messenger application written in JavaScript (Jquery) and php. For the interface we have used Bootstrap and on the backend the data is stored in a MySQL database.
 
